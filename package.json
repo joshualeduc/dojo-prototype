@@ -1,0 +1,31 @@
+{
+  "name": "dojo-prototype",
+  "version": "1.0.0",
+  "description": "Teach Danish to native English Speakers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JLeDuc",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-dragdrop": "^1.0.12",
+    "angular-route": "^1.4.8",
+    "body-parser": "^1.14.1",
+    "bootstrap": "^3.3.6",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "jquery": "^2.1.4",
+    "jquery-ui": "^1.10.5",
+    "mongoose": "^4.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-uglifycss": "^1.0.5"
+  }
+}
