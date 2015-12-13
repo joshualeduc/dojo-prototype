@@ -13,5 +13,10 @@ module.exports = function (){
   require('../api/lesson/lesson.routes')(app);
   app.use('/assets', express.static('./public'));
   app.use('/vendor', express.static('./node_modules'));
+
+  //Going into my app folder until I learn gulp better
+  app.use('/directive', express.static('./app/component'));
+  app.use('/lessons/introduce-yourself', express.static('./app/lessons/introduce-yourself'));
+  app.use('/template', express.static('./app/shared/template'));
   return app;
 };
