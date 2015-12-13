@@ -1,4 +1,5 @@
+var mongodb = require('./dbInfo.js');
 module.exports = {
-  db: 'mongodb',
+  db: mongodb,
   sessionSecret: 'developmentSecret'
 };
