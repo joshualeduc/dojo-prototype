@@ -1,2 +1,2 @@
 node_modules/
-config/env/dbInfo.js
+server/config/env/dbInfo.js
