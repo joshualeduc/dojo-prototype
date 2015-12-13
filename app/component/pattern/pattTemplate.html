@@ -1,0 +1,46 @@
+<div class="row no-gutters lessonView">
+  <div class="section1 col-xs-12 text-center">
+    <p>{{string}}</p>
+  </div>
+  <div class="patt-answer col-xs-12 text-center hidden">
+    {{responseText}}
+  </div>
+  <div class="row no-gutters">
+    <ul class="col-xs-3 text-center list0">
+      <li class="btn btn-default round pattern-answer" data-drop="true" jqyoui-droppable="{onDrop: 'dropCallback'}" ng-model="answers[0]">
+        <span ng-class="answers[0].title ? 'hidden' : ''">
+          Drop here
+        </span>
+        <div class="btn btn-danger round selected-answer" data-drag="true" jqyoui-draggable="{placeholder: true}" data-jqyoui-options="{revert: 'invalid', containment: 'parent'}" ng-model="answer[0]" ng-show="answers[0].title">{{answers[0].title}}</div>
+      </li>
+      <li class="btn btn-danger round pattern-list" ng-repeat="item in list0" data-drop="true" jqyoui-droppable="{index: {{$index}}}" data-drag="{{item.drag}}" ng-model="list0" jqyoui-draggable="{index: {{$index}}, animate: false}" data-jqyoui-options="{revert: 'invalid', containment: 'parent'}">{{item.title}}</li>
+    </ul>
+    <ul class="col-xs-3 text-center list1">
+      <li class="btn btn-default round pattern-answer" data-drop="true" jqyoui-droppable="{onDrop: 'dropCallback'}" ng-model="answers[1]">
+        <span ng-class="answers[1].title ? 'hidden' : ''">
+          Drop here
+        </span>
+        <div class="btn btn-info round selected-answer" data-drag="true" jqyoui-draggable="{placeholder: true}" data-jqyoui-options="{revert: 'invalid', containment: 'parent'}" ng-model="answer[1]" ng-show="answers[1].title">{{answers[1].title}}</div>
+      </li>
+      <li class="btn btn-info round pattern-list" ng-repeat="item in list1" data-drop="true" jqyoui-droppable="{index: {{$index}}}" data-drag="{{item.drag}}" ng-model="list1" jqyoui-draggable="{index: {{$index}}, animate: false}" data-jqyoui-options="{revert: 'invalid', containment: 'parent'}">{{item.title}}</li>
+    </ul>
+    <ul class="col-xs-3 text-center list2">
+      <li class="btn btn-default round pattern-answer" data-drop="true" jqyoui-droppable="{onDrop: 'dropCallback'}" ng-model="answers[2]">
+        <span ng-class="answers[2].title ? 'hidden' : ''">
+          Drop here
+        </span>
+        <div class="btn btn-success round selected-answer" data-drag="true" jqyoui-draggable="{placeholder: true}" data-jqyoui-options="{revert: 'invalid', containment: 'parent'}" ng-model="answer[2]" ng-show="answers[2].title">{{answers[2].title}}</div>
+      </li>
+      <li class="btn btn-success round pattern-list" ng-repeat="item in list2" data-drop="true" jqyoui-droppable="{index: {{$index}}}" data-drag="{{item.drag}}" ng-model="list2" jqyoui-draggable="{index: {{$index}}, animate: false}" data-jqyoui-options="{revert: 'invalid', containment: 'parent'}">{{item.title}}</li>
+    </ul>
+    <ul class="col-xs-3 text-center list3">
+      <li class="btn btn-default round pattern-answer" data-drop="true" jqyoui-droppable="{onDrop: 'dropCallback'}" ng-model="answers[3]">
+        <span ng-class="answers[3].title ? 'hidden' : ''">
+          Drop here
+        </span>
+        <div class="btn btn-warning round selected-answer" data-drag="true" jqyoui-draggable="{placeholder: true}" data-jqyoui-options="{revert: 'invalid', containment: 'parent'}" ng-model="answer[3]" ng-show="answers[3].title">{{answers[3].title}}</div>
+      </li>
+      <li class="btn btn-warning round pattern-list" ng-repeat="item in list3" data-drop="true" jqyoui-droppable="{index: {{$index}}}" data-drag="{{item.drag}}" ng-model="list3" jqyoui-draggable="{index: {{$index}}, animate: false}" data-jqyoui-options="{revert: 'invalid', containment: 'parent'}">{{item.title}}</li>
+    </ul>
+  </div>
+</div>

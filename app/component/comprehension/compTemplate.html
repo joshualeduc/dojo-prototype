@@ -1,0 +1,35 @@
+<div class="row no-gutters">
+  <div class="mascot lessonView col-xs-5">
+    <div class="text-right">
+      <img id="mascot" src="/images/mascotChallenge.png">
+      <img class="quoteLine invisible" src="/images/speechLine.png" alt="">
+    </div>
+  </div>
+  <div class="infoArea lessonView col-xs-7">
+    <div class="text-center">
+      <div class="section1 invisible">
+        <p>Let's test your listening skills.</p>
+        <p>What does this word mean?</p>
+      </div>
+      <div class="response-selection hidden">
+        <p>You picked "{{responseChosen}}", is that your final answer?</p>
+      </div>
+      <div class="response-answer hidden">
+        {{responseText}}
+      </div>
+      <div class="section2 invisible">
+        <div class="col-xs-12 text-center">
+         <img class="replayButton" src="/images/replayButton.png" ng-click="audioPlay({ file: audioFile })">
+        </div>
+        <ul class="multipleChoice col-xs-6">
+          <li class="btn btn-success btn-lg round" ng-click="select(option1)">{{option1}}</li>
+          <li class="btn btn-success btn-lg round" ng-click="select(option2)">{{option2}}</li>
+        </ul>
+        <ul class="multipleChoice col-xs-6">
+          <li class="btn btn-success btn-lg round" ng-click="select(option3)">{{option3}}</li>
+          <li class="btn btn-success btn-lg round" ng-click="select(option4)">{{option4}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
