@@ -1,55 +1,45 @@
 module.exports = {
-  nav: {
-    gradeType: Code,
-    next: Code,
-    prev: Code,
-    sub: Boolean
-  },
   comp: {
-    audioFile: Code,
-    audioPlay: Code,
-    answerText: String,
+    audioFile: String,
     optionOne: String,
     optionTwo: String,
     optionThree: String,
     optionFour: String,
-    toGrade: Code,
     answerKey: String,
-    responseText: Code
   },
   convo: {
-    danish: {},
-    placeholder: {},
-    answerText: {},
-    toGrade: {},
-    answerKey: {},
-    responseText: {},
-    gradeType: {}
+    danish: String,
+    placeholder: String,
+    answerKey: String,
   },
   img: {
-    image: {}
+    image: String
   },
-  patt: {
-    string: {},
-    answerArray: {},
-    answerKey: {},
-    listZero: {},
-    listOne: {},
-    listTwo: {},
-    listThree: {},
-    responseText: {},
-    toGrade: {}
-  },
+  // patt: {
+  //   prompt: String,
+  //   list0: {},
+  //   list1: {},
+  //   list2: {},
+  //   list3: {},
+  //   answerKey: Array
+  // },
   prod: {
-
+    phrase: String,
+    placeholder: String,
+    answerKey: String
   },
   stat: {
-
+    string1: String,
+    string2: String,
+    string3: String,
+    blue: String
   },
   teach: {
-
+    audioFile: String,
+    danish: String,
+    english: String
   },
   unique: {
-
+    path: String
   }
 };

@@ -6,15 +6,14 @@ var obj = require('./slides.objects');
 var SlideSchema = new Schema({
   lessonTitle: String,
   slidePosition: Number,
-  nav: obj.nav,
   compT: obj.comp,
   convoT: obj.convo,
   imgT: obj.img,
-  pattT: obj.patt,
+  // pattT: obj.patt,
   prodT: obj.prod,
   statT: obj.stat,
   teachT: obj.teach,
   uniqueT: obj.unique
 });
 
-module.exports = mongoose.model('Slides', SlideSchema);
+module.exports = mongoose.model('Slide', SlideSchema);
