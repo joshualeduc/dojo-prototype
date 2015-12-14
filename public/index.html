@@ -3,7 +3,7 @@
   <head>
     <title>Dojo4</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="assets/styles.css">
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700' rel='stylesheet' type='text/css'>
   </head>
@@ -21,7 +21,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#/"><img src="images/newlogo.png" alt="Dojo Logo"></a>
+          <a class="navbar-brand" href="#/"><img src="/assets/images/newlogo.png" alt="Dojo Logo"></a>
         </div><!--End of nav header-->
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -60,14 +60,12 @@
       <div id="sidebar-wrapper" class="col-xs-3" ng-show="sidebar">
         <ul class="sidebar-nav nav-stacked nav text-center">
           <li class="sidebar-brand text-left">Meet Someone New</li>
-          <li><a href=""><img src="/lessons/introduce-yourself/images/introIcon.png" alt="">Introduction</a></li>
-          <li><a href=""><img src="/lessons/introduce-yourself/images/practiceIcon.png" alt="">Practice!</a></li>
-          <li><a href=""><img src="/lessons/introduce-yourself/images/cultureIcon.png" alt="">Culture</a></li>
-          <li><a href="#/introduce-yourself/introduction-1/slide/1"><img src="/lessons/introduce-yourself/images/introduceIcon1.png" alt="">Introduce Yourself 1</a></li>
-          <li><a href="#/introduce-yourself/introduction-2/slide/1"><img src="/lessons/introduce-yourself/images/introduceIcon2.png" alt="">Introduce Yourself 2</a></li>
-          <li><a href="#/introduce-yourself/get-to-know-someone/slide/1"><img src="/lessons/introduce-yourself/images/getIcon.png" alt="">Get to Know Someone</a></li>
-          <li><a href="#/introduce-yourself/greetings-phrases/slide/1"><img src="/lessons/introduce-yourself/images/phrasesIcon.png" alt="">Greetings & Phrases</a></li>
-          <li><a href=""><img src="/lessons/introduce-yourself/images/practiceIcon.png" alt="">Practice</a></li>
+          <li><a href=""><img src="/assets/lessons/introduce-yourself/images/introIcon.png" alt="">Introduction</a></li>
+          <li><a href=""><img src="/assets/lessons/introduce-yourself/images/cultureIcon.png" alt="">Culture</a></li>
+          <li><a href="#/introduce-yourself/introduction-1/slide/1"><img src="/assets/lessons/introduce-yourself/images/introduceIcon1.png" alt="">Introduce Yourself 1</a></li>
+          <li><a href="#/introduce-yourself/introduction-2/slide/1"><img src="/assets/lessons/introduce-yourself/images/introduceIcon2.png" alt="">Introduce Yourself 2</a></li>
+          <li><a href="#/introduce-yourself/get-to-know-someone/slide/1"><img src="/assets/lessons/introduce-yourself/images/getIcon.png" alt="">Get to Know Someone</a></li>
+          <li><a href="#/introduce-yourself/greetings-phrases/slide/1"><img src="/assets/lessons/introduce-yourself/images/phrasesIcon.png" alt="">Greetings & Phrases</a></li>
         </ul>
       </div>
 
@@ -90,12 +88,12 @@
 
     <!-- Library Scripts -->
 
-    <script src="js/vendor/jquery-2.1.4.js"></script>
-    <script src="js/vendor/bootstrap.js"></script>
-    <script src="js/vendor/angular.js"></script>
-    <script src="js/vendor/angular-route.js"></script>
-    <script src="bower_components/jquery-ui/jquery-ui.js" charset="utf-8"></script>
-    <script src="bower_components/angular-dragdrop/src/angular-dragdrop.js" charset="utf-8"></script>
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-route/angular-route.js"></script>
+    <script src="vendor/jquery-ui/jquery-ui.js" charset="utf-8"></script>
+    <script src="vendor/angular-dragdrop/src/angular-dragdrop.js" charset="utf-8"></script>
 
     <!-- Custom Scripts -->
     <script src="assets/all.min.js"></script>

@@ -10,8 +10,8 @@ module.exports = function (){
   app.use(cors());
   require('../api/slides/slides.routes')(app);
   require('../api/lesson/lesson.routes')(app);
-  app.use('/assets', express.static('./public'));
-  app.use('/vendor', express.static('./node_modules'));
+  app.use('/assets', express.static(__dirname + './public'));
+  app.use('/vendor', express.static(__dirname + './node_modules'));
 
   //Going into my app folder until I learn gulp better
   app.use('/directive', express.static('./app/component'));

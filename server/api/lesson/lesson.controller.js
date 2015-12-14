@@ -1,11 +1,11 @@
 var Lessons = require('./lesson.model');
 
 exports.getLesson = function (req, res, next){
-  Slides.find({"missionTitle": req.params.mission}).exec(function (err, lessonObj){
+  Slides.find({"missionTitle": req.params.mission}).populate('firstLesson').populate('secondLesson').populate('thirdLesson').populate('fourthLesson').exec(function (err, missionObj){
     if (err){
       res.status(500).send(err);
     } else{
-      res.send(lessonObj);
+      res.send(missionObj);
     }
   });
 };

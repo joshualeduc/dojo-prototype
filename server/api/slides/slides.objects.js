@@ -5,12 +5,12 @@ module.exports = {
     optionTwo: String,
     optionThree: String,
     optionFour: String,
-    answerKey: String,
+    answerKey: String
   },
   convo: {
     danish: String,
     placeholder: String,
-    answerKey: String,
+    answerKey: String
   },
   img: {
     image: String
@@ -37,7 +37,9 @@ module.exports = {
   teach: {
     audioFile: String,
     danish: String,
-    english: String
+    english: String,
+    modalTitle: String,
+    modalBody: String
   },
   unique: {
     path: String
