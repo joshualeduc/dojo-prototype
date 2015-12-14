@@ -3,7 +3,7 @@ var dojo = angular.module('dojo');
 dojo.directive("comprehensionAssessment", function() {
   return {
     restrict: 'AE',
-    templateUrl: 'directives/compTemplate.html',
+    templateUrl: 'directive/comprehension/compTemplate.html',
     replace: true,
     scope: {
       option1: '@',

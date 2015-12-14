@@ -3,7 +3,7 @@ var dojo = angular.module('dojo');
 dojo.directive("imagePage", function() {
   return {
     restrict: 'AE',
-    templateUrl: 'directives/imageTemplate.html',
+    templateUrl: 'directive/imagepage/imageTemplate.html',
     replace: true,
     scope: {
       image: '='

@@ -3,7 +3,7 @@ var dojo = angular.module('dojo');
 dojo.directive("convoAssessment", function() {
   return {
     restrict: 'AE',
-    templateUrl: 'directives/convoTemplate.html',
+    templateUrl: 'directive/conversation/convoTemplate.html',
     replace: true,
     scope: {
       danish: '@',

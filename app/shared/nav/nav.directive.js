@@ -3,7 +3,7 @@ var dojo = angular.module('dojo');
 dojo.directive("navigationButtons", function() {
   return {
     restrict: 'AE',
-    templateUrl: 'directives/navigationbuttons.html',
+    templateUrl: 'bootstrap/nav/navTemplate.html',
     replace: true,
     scope: {
       nextSlide: '&',

@@ -3,7 +3,7 @@ var dojo = angular.module('dojo');
 dojo.directive("teachingPage", function() {
   return {
     restrict: 'AE',
-    templateUrl: 'directives/teachingTemplate.html',
+    templateUrl: 'directive/teaching/teachingTemplate.html',
     replace: true,
     scope: {
         phraseDanish: '@',

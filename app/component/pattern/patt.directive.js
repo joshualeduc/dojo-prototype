@@ -3,7 +3,7 @@ var dojo = angular.module('dojo');
 dojo.directive("patternAssessment", function() {
   return {
     restrict: 'AE',
-    templateUrl: 'directives/patternTemplate.html',
+    templateUrl: 'directive/pattern/pattTemplate.html',
     replace: true,
     scope: {
       string: '@',

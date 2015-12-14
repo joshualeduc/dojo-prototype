@@ -3,7 +3,7 @@ var dojo = angular.module('dojo');
 dojo.directive("bootstrapModal", function() {
   return {
     restrict: 'AE',
-    templateUrl: 'directives/bootstrapModal.html',
+    templateUrl: 'bootstrap/modal/modalTemplate.html',
     replace: true,
     scope: {
       title: '=',

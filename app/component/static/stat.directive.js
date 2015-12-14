@@ -3,7 +3,7 @@ var dojo = angular.module('dojo');
 dojo.directive("staticPage", function() {
   return {
     restrict: 'AE',
-    templateUrl: 'directives/staticTemplate.html',
+    templateUrl: 'directive/static/staticTemplate.html',
     replace: true,
     scope: {
       string1: '@',

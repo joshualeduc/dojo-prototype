@@ -3,7 +3,7 @@ var dojo = angular.module('dojo');
 dojo.directive("productionAssessment", function() {
   return {
     restrict: 'AE',
-    templateUrl: 'directives/prodTemplate.html',
+    templateUrl: 'directive/production/prodTemplate.html',
     replace: true,
     scope: {
       phrase: '@',
