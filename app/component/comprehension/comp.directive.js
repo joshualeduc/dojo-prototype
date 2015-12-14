@@ -6,16 +6,7 @@ dojo.directive("comprehensionAssessment", function() {
     templateUrl: 'directive/comprehension/compTemplate.html',
     replace: true,
     scope: {
-      option1: '@',
-      option2: '@',
-      option3: '@',
-      option4: '@',
-      audioFile: '=',
-      audioPlay: '&',
-      answerText: '@',
-      toGrade: '=',
-      answerKey: '=',
-      responseText: '='
+      data: '='
     },
     controller: function($scope) {
       $scope.select = function(selectionText) {

@@ -1,17 +1,17 @@
 <div class="row no-gutters">
   <div class="mascot lessonView col-xs-5">
     <div class="text-right">
-      <img id="mascot" src="/images/mascotChallenge2.png">
-      <img class="quoteLine invisible" src="/images/speechLine.png" alt="">
+      <img id="mascot" src="assets/images/mascotChallenge2.png">
+      <img class="quoteLine invisible" src="assets/images/speechLine.png" alt="">
     </div>
   </div>
   <div class="infoArea lessonView col-xs-7">
     <div class="text-center">
       <div class="section1 invisible">
-        <p class="prodText">{{danish}}</p>
+        <p class="prodText">{{data.danish}}</p>
       </div>
       <div class="response-answer hidden">
-        {{responseText}}
+        {{data.responseText}}
       </div>
       <div class="section2 inputSection invisible">
         <form ng-submit="grade();">

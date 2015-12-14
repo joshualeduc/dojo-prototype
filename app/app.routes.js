@@ -8,8 +8,13 @@ dojo.config(function ($routeProvider) {
     controller: 'mainCtrl'
   })
 
-  .when('/:mission/:lesson/slide/:slideCount', {
-    templateUrl : 'assets/template/lessonTemplate.html',
-    controller: 'playerCtrl'
+  .when('/IntroduceYourself/:lesson/slide/:slideCount', {
+    templateURL: 'assets/template/lessonTemplate.html',
+    controller: 'playerCtrl',
+    resolve: {
+      lessonArray: function(getLesson){
+        return getLesson.getLessonData();
+      }
+    }
   });
 });

@@ -6,10 +6,7 @@ dojo.directive("teachingPage", function() {
     templateUrl: 'directive/teaching/teachingTemplate.html',
     replace: true,
     scope: {
-        phraseDanish: '@',
-        phraseEnglish: '@',
-        audioFile: '=',
-        audioPlay: '&'
+        data: '='
     },
     link: function(scope, elements, attrs) {
 //            AutoPlay

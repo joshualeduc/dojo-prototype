@@ -14,19 +14,16 @@ dojo.controller('mainCtrl', function($scope, speechRec) {
   };
 });
 
-dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location, $http, player, audioService, userInput, speechRec, gradingService) {
+dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location, $http, lessonArray, player, userInput, speechRec, gradingService) {
+// Get Lesson Data
+  $scope.currentSlide = lessonArray[$routeParams.slideCount - 1];
+  $scope.audioPlay = player.play;
+  $scope.lessonLength = lessonArray.length;
+
 //    Autoplay Unique Slides
   setTimeout(function() {$(".quoteLine-auto").removeClass("invisible");}, 700);
   setTimeout(function() {$(".section1-auto").removeClass("invisible");}, 700);
   setTimeout(function() {$(".section2-auto").removeClass("invisible");}, 1400);
-
-
-//    Sounds
-  $scope.audioFiles = {};
-  audioService.success(function(response){
-    $scope.audioFiles = response;
-  });
-  $scope.audioPlay = player.play;
 
 //   Unique Pages User Input
   $scope.userName = userInput.userName;

@@ -6,10 +6,7 @@ dojo.directive("staticPage", function() {
     templateUrl: 'directive/static/staticTemplate.html',
     replace: true,
     scope: {
-      string1: '@',
-      string2: '@',
-      string3: '@',
-      blue: '@'
+      data: '='
     },
     link: function(scope, elements, attrs) {
 //            AutoPlay

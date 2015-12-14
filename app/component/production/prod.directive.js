@@ -6,13 +6,7 @@ dojo.directive("productionAssessment", function() {
     templateUrl: 'directive/production/prodTemplate.html',
     replace: true,
     scope: {
-      phrase: '@',
-      answerText: '@',
-      placeholder: '@',
-      toGrade: '=',
-      answerKey: '=',
-      responseText: '=',
-      grade: '&',
+      data: '='
     },
     controller: function($scope, speechRec){
       $scope.toggleSpeechInput = function() {

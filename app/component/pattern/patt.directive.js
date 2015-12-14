@@ -6,15 +6,7 @@ dojo.directive("patternAssessment", function() {
     templateUrl: 'directive/pattern/pattTemplate.html',
     replace: true,
     scope: {
-      string: '@',
-      list0: '=',
-      list1: '=',
-      list2: '=',
-      list3: '=',
-      answerArray: '=',
-      toGrade: '=',
-      answerKey: '=',
-      responseText: '='
+      data: '='
     },
     controller: function($scope){
       $scope.answerKey = $scope.answerArray;

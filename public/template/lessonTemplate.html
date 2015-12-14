@@ -2,12 +2,13 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <progress-bar></progress-bar>
-      <comprehension-assessment></comprehension-assessment>
-      <convo-assessment></convo-assessment>
-      <production-assessment></production-assessment>
-      <image-page></image-page>
-      <static-page></static-page>
-      <teaching-page></teaching-page>
+      <comprehension-assessment ng-show="currentSlide.compT" data="currentSlide.compT"></comprehension-assessment>
+      <convo-assessment ng-show="currentSlide.convoT" data="currentSlide.convoT"></convo-assessment>
+      <production-assessment ng-show="currentSlide.prodT" data="currentSlide.prodT"></production-assessment>
+      <image-page ng-show="currentSlide.imgT" data="currentSlide.imgT"></image-page>
+      <static-page ng-show="currentSlide.statT" data="currentSlide.statT"></static-page>
+      <teaching-page ng-show="currentSlide.teachT" data="currentSlide.teachT"></teaching-page>
+      <unique-page ng-show="currentSlide.uniqueT" data="currentSlide.uniqueT"></unique-page>
     </div>
     <div class="panel-footer">
       <navigation-buttons></navigation-buttons>

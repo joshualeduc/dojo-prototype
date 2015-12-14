@@ -6,7 +6,7 @@ dojo.directive("imagePage", function() {
     templateUrl: 'directive/imagepage/imageTemplate.html',
     replace: true,
     scope: {
-      image: '='
+      data: '='
     },
     link: function(scope, elements, attrs) {
 //            AutoPlay

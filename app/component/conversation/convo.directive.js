@@ -6,13 +6,7 @@ dojo.directive("convoAssessment", function() {
     templateUrl: 'directive/conversation/convoTemplate.html',
     replace: true,
     scope: {
-      danish: '@',
-      placeholder: '@',
-      answerText: '@',
-      toGrade: '=',
-      answerKey: '=',
-      responseText: '=',
-      grade: '&'
+      data: '='
     },
     controller: function($scope, speechRec){
       $scope.toggleSpeechInput = function() {
