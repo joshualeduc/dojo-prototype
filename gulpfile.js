@@ -17,7 +17,7 @@ gulp.task('styles', function(){
 });
 
 gulp.task('javascript', function(){
-  gulp.src(['./app/**/*.js'])
+  gulp.src(['./app/app.module.js', './app/app.routes.js', './app/app.controller.js', './app/component/**/*.js', './app/shared/**/*.js'])
     .pipe(ngAnnotate())
     .pipe(concat('all.min.js'))
     .pipe(uglify())
