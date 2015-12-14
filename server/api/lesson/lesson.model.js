@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 var LessonSchema = new Schema({
-  title: String,
+  missionTitle: String,
   introduction: String,
   culture: String,
   firstLesson: [

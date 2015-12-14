@@ -1,7 +1,7 @@
-var Slide = require('./slides.model');
+var Slides = require('./slides.model');
 
 exports.getSlide = function (req, res, next){
-  Slide.find({"lessonTitle": req.params.lesson}).exec(function (err, slides){
+  Slides.find({"lessonTitle": req.params.lesson}).exec(function (err, slides){
     if (err){
       res.status(500).send(err);
     } else{
@@ -11,7 +11,7 @@ exports.getSlide = function (req, res, next){
 };
 
 exports.addSlide = function (req, res, next){
-  new Slide(req.body).save(function(err, data){
+  new Slides(req.body).save(function(err, data){
     if (err){
       res.status(500).send(err);
     } else{

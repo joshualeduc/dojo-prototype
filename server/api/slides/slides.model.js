@@ -16,4 +16,4 @@ var SlideSchema = new Schema({
   uniqueT: obj.unique
 });
 
-module.exports = mongoose.model('Slide', SlideSchema);
+module.exports = mongoose.model('Slides', SlideSchema);
