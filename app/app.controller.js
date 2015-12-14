@@ -1,31 +1,12 @@
 var dojo = angular.module('dojo');
 
-dojo.controller('mainCtrl', function($scope, speechRec) {
-  $scope.speechRec = speechRec;
-  $scope.start = speechRec.start;
-  $scope.stop = speechRec.stop;
-  $scope.answer = '';
-
-  $scope.sidebar = false;
-  $scope.sidebarClass = false;
-  $scope.sidebarToggle = function() {
-    $scope.sidebar = !$scope.sidebar;
-    $scope.sidebarClass = !$scope.sidebarClass;
-  };
-});
-
 dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location, $http, lessonArray, player, userInput, speechRec, gradingService) {
 // Get Lesson Data
   $scope.currentSlide = lessonArray[$routeParams.slideCount - 1];
   $scope.audioPlay = player.play;
   $scope.lessonLength = lessonArray.length;
 
-//    Autoplay Unique Slides
-  setTimeout(function() {$(".quoteLine-auto").removeClass("invisible");}, 700);
-  setTimeout(function() {$(".section1-auto").removeClass("invisible");}, 700);
-  setTimeout(function() {$(".section2-auto").removeClass("invisible");}, 1400);
-
-//   Unique Pages User Input
+// User Data
   $scope.userName = userInput.userName;
   $scope.job = userInput.job;
   $scope.iAmJob = userInput.iAmJob;
@@ -33,6 +14,10 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
   $scope.jobDanish = userInput.jobDanish;
   $scope.jobTitle = userInput.jobTitle;
   $scope.jobPronunciation = userInput.jobPronunciation;
+//    Autoplay Unique Slides
+  setTimeout(function() {$(".quoteLine-auto").removeClass("invisible");}, 700);
+  setTimeout(function() {$(".section1-auto").removeClass("invisible");}, 700);
+  setTimeout(function() {$(".section2-auto").removeClass("invisible");}, 1400);
 
 //    Navigation
   $scope.slideNum = $routeParams.slideCount;
@@ -83,8 +68,8 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     userInput.iAmJob = $scope.audioFiles.jegErRevisor;
     userInput.jobDanish = 'revisor';
     userInput.jobEnglish = 'accountant';
-    userInput.jobTitle = '/lessons/introduce-yourself/introduction-1/images/revisorWord.png';
-    userInput.jobPronunciation = '/lessons/introduce-yourself/introduction-1/images/rPronunciation.png';
+    userInput.jobTitle = 'assets/lessons/introduce-yourself/introduction-1/images/revisorWord.png';
+    userInput.jobPronunciation = 'assets/lessons/introduce-yourself/introduction-1/images/rPronunciation.png';
     $scope.nextSlide();
   };
   $scope.analyst = function() {
@@ -92,8 +77,8 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     userInput.iAmJob = $scope.audioFiles.jegErAnalytiker;
     userInput.jobDanish = 'analytiker';
     userInput.jobEnglish = 'analyst';
-    userInput.jobTitle = '/lessons/introduce-yourself/introduction-1/images/analytikerWord.png';
-    userInput.jobPronunciation = '/lessons/introduce-yourself/introduction-1/images/yPronunciation.png';
+    userInput.jobTitle = 'assets/lessons/introduce-yourself/introduction-1/images/analytikerWord.png';
+    userInput.jobPronunciation = 'assets/lessons/introduce-yourself/introduction-1/images/yPronunciation.png';
     $scope.nextSlide();
   };
   $scope.consultant = function() {
@@ -101,7 +86,7 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     userInput.iAmJob = $scope.audioFiles.jegErKonsulent;
     userInput.jobDanish = 'konsulent';
     userInput.jobEnglish = 'consultant';
-    userInput.jobTitle = '/lessons/introduce-yourself/introduction-1/images/konsulentWord.png';
+    userInput.jobTitle = 'assets/lessons/introduce-yourself/introduction-1/images/konsulentWord.png';
     userInput.jobPronunciation = '';
     $scope.nextSlide();
   };
@@ -110,8 +95,8 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     userInput.iAmJob = $scope.audioFiles.jegErDesigner;
     userInput.jobDanish = 'designer';
     userInput.jobEnglish = 'designer';
-    userInput.jobTitle = '/lessons/introduce-yourself/introduction-1/images/designerWord.png';
-    userInput.jobPronunciation = '/lessons/introduce-yourself/introduction-1/images/rPronunciation.png';
+    userInput.jobTitle = 'assets/lessons/introduce-yourself/introduction-1/images/designerWord.png';
+    userInput.jobPronunciation = 'assets/lessons/introduce-yourself/introduction-1/images/rPronunciation.png';
     $scope.nextSlide();
   };
   $scope.engineer = function() {
@@ -119,8 +104,8 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     userInput.iAmJob = $scope.audioFiles.jegErIngenior;
     userInput.jobDanish = 'ingeniør';
     userInput.jobEnglish = 'engineer';
-    userInput.jobTitle = '/lessons/introduce-yourself/introduction-1/images/ingeniorWord.png';
-    userInput.jobPronunciation = '/lessons/introduce-yourself/introduction-1/images/oPronunciation.png';
+    userInput.jobTitle = 'assets/lessons/introduce-yourself/introduction-1/images/ingeniorWord.png';
+    userInput.jobPronunciation = 'assets/lessons/introduce-yourself/introduction-1/images/oPronunciation.png';
     $scope.nextSlide();
   };
   $scope.manager = function() {
@@ -128,8 +113,8 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     userInput.iAmJob = $scope.audioFiles.jegErDirektor;
     userInput.jobDanish = 'direktør';
     userInput.jobEnglish = 'manager';
-    userInput.jobTitle = '/lessons/introduce-yourself/introduction-1/direktorWord.png';
-    userInput.jobPronunciation = '/lessons/introduce-yourself/introduction-1/images/oPronunciation.png';
+    userInput.jobTitle = 'assets/lessons/introduce-yourself/introduction-1/direktorWord.png';
+    userInput.jobPronunciation = 'assets/lessons/introduce-yourself/introduction-1/images/oPronunciation.png';
     $scope.nextSlide();
   };
 });
