@@ -1,14 +1,14 @@
 /**
  * jQuery Voice plugin 0.3 (31st May 2015)
  * Copyright Subin Siby - http://subinsb.com
- * 
+ *
  * ------------------
  * Licensed under MIT
  * ------------------
- * 
+ *
  * A jQuery plugin to record, play & download microphone input sound from the user.
  * NEEDS recorder.js and recorderWorker.js to work - https://github.com/mattdiamond/Recorderjs
- * 
+ *
  * To use MP3 conversion, NEEDS mp3Worker.js, libmp3lame.min.js and recorder.js from https://github.com/nusofthq/Recordmp3js/tree/master/js
  *
  * Full Documentation & Support - http://subinsb.com/html5-record-mic-voice
@@ -17,12 +17,12 @@
 (function(window){
   window.Fr = window.Fr || {};
 	Fr.voice = {
-    workerPath: "js/recorderWorker.js",
+    workerPath: "assets/recorderWorker.js",
     mp3WorkerPath: "js/mp3Worker.js",
     stream: false,
-    
+
     init_called: false,
-    
+
     /**
      * Initialize. Set up variables.
      */
@@ -40,7 +40,7 @@
     		alert('Web Audio API is not supported in this browser');
     	}
     },
-    
+
     /**
      * Start recording audio
      */
@@ -67,7 +67,7 @@
     		alert('No live audio input');
     	});
     },
-    
+
     /**
      * Stop recording audio
      */
@@ -77,7 +77,7 @@
     	this.stream.stop();
     	return this;
     },
-    
+
     /**
      * Export the recorded audio to different formats :
      * BLOB, MP3, Base64, BLOB URL
@@ -91,9 +91,9 @@
             callback(blob);
           }else if (type == "base64"){
             var reader = new window.FileReader();
-            reader.readAsDataURL(blob); 
+            reader.readAsDataURL(blob);
             reader.onloadend = function() {
-              base64data = reader.result;            
+              base64data = reader.result;
               callback(base64data);
             };
           }else if(type == "URL"){

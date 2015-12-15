@@ -4,7 +4,7 @@
    * These URLs can't be used, so download these files from the URL, store locally and then
    * change the values `workerPath` and `mp3WorkerPath` in jquery.voice.js
    */
-  var WORKER_PATH = 'recorderWorker.js';
+  var WORKER_PATH = 'assets/recorderWorker.js';
 //  var mp3WorkerPath = 'http://lab.subinsb.com/projects/jquery/voice/mp3Worker.js';
 
   var Recorder = function(source, cfg){
@@ -15,7 +15,7 @@
                  this.context.createJavaScriptNode).call(this.context,
                                                          bufferLen, 2, 2);
     var worker = new Worker(config.workerPath || WORKER_PATH);
-    
+
     worker.postMessage({
       command: 'init',
       config: {
@@ -79,7 +79,7 @@
       // MP3 conversion
       this.exportWAV(function(){});
       currCallback = cb || config.callback;
-      
+
       var encoderWorker = new Worker(config.mp3WorkerPath || mp3WorkerPath);
       worker.onmessage = function(e){
         var blob = e.data;
@@ -115,7 +115,7 @@
     source.connect(this.node);
     this.node.connect(this.context.destination);    //this should not be necessary
   }
-  
+
   function parseWav(wav) {
     function readInt(i, bytes) {
       var ret = 0,
@@ -136,7 +136,7 @@
       samples: wav.subarray(44)
     };
   }
-  
+
   function Uint8ArrayToFloat32Array(u8a){
     var f32Buffer = new Float32Array(u8a.length);
     for (var i = 0; i < u8a.length; i++) {
@@ -146,7 +146,7 @@
     }
     return f32Buffer;
   }
-  
+
   function encode64(buffer) {
     var binary = '',
     bytes = new Uint8Array( buffer ),
