@@ -9,23 +9,22 @@ dojo.directive("patternAssessment", function() {
       data: '='
     },
     controller: function($scope){
-      $scope.answerKey = $scope.answerArray;
-      $scope.answers = [];
+      $scope.data.answers = [];
       $scope.dropCallback = function(){
-        $scope.toGrade = $scope.answers;
+        $scope.data.toGrade = $scope.data.answers;
       };
     },
     link: function(scope, elements, attrs) {
-      if(!scope.list0){
+      if(!scope.data.list0[0]){
         angular.element($(".list0").addClass("hidden"));
         angular.element($(".list1").addClass("col-xs-offset-1point5"));
-      }else if(!scope.list1){
+      }else if(!scope.data.list1[0]){
         angular.element($(".list1").addClass("hidden"));
         angular.element($(".list0").addClass("col-xs-offset-1point5"));
-      }else if(!scope.list2){
+      }else if(!scope.data.list2[0]){
         angular.element($(".list2").addClass("hidden"));
         angular.element($(".list0").addClass("col-xs-offset-1point5"));
-      }else if(!scope.list3){
+      }else if(!scope.data.list3[0]){
         angular.element($(".list3").addClass("hidden"));
         angular.element($(".list0").addClass("col-xs-offset-1point5"));
       }

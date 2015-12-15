@@ -9,7 +9,7 @@ var SlideSchema = new Schema({
   compT: obj.comp,
   convoT: obj.convo,
   imgT: obj.img,
-  // pattT: obj.patt,
+  pattT: obj.patt,
   prodT: obj.prod,
   statT: obj.stat,
   teachT: obj.teach,

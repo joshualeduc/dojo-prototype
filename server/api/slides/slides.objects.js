@@ -15,14 +15,14 @@ module.exports = {
   img: {
     image: String
   },
-  // patt: {
-  //   prompt: String,
-  //   list0: {},
-  //   list1: {},
-  //   list2: {},
-  //   list3: {},
-  //   answerKey: Array
-  // },
+  patt: {
+    prompt: String,
+    list0: [{title: String, drag: Boolean}, {title: String, drag: Boolean}, {title: String, drag: Boolean}],
+    list1: [{title: String, drag: Boolean}, {title: String, drag: Boolean}, {title: String, drag: Boolean}],
+    list2: [{title: String, drag: Boolean}, {title: String, drag: Boolean}, {title: String, drag: Boolean}],
+    list3: [{title: String, drag: Boolean}, {title: String, drag: Boolean}, {title: String, drag: Boolean}],
+    answerKey: [{title: String}, {title: String}, {title: String}, {title: String}]
+  },
   prod: {
     phrase: String,
     placeholder: String,
