@@ -12,7 +12,7 @@ dojo.directive("comprehensionAssessment", function() {
       $scope.select = function(selectionText) {
         $scope.responseChosen = selectionText;
         $scope.data.toGrade = selectionText;
-        $scope.answerKey = $scope.data.answerKey;
+        // $scope.answerKey = $scope.data.answerKey;
         angular.element($(".section1").addClass("hidden"));
         angular.element($(".response-selection").removeClass("hidden"));
         angular.element($("#mascot").attr("src", 'assets/images/mascotChallengeBeard.png'));

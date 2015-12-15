@@ -11,7 +11,7 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
   if($scope.currentSlide.statT){$scope.slideObj = $scope.currentSlide.statT;}
   if($scope.currentSlide.teachT){$scope.slideObj = $scope.currentSlide.teachT;}
   if($scope.currentSlide.uniqueT){$scope.slideObj = $scope.currentSlide.uniqueT;}
-  if($scope.currentSlide.pattT){$scope.slideObj = $scope.currentSlide.pattT;}
+  if($scope.currentSlide.pattT.prompt){$scope.slideObj = $scope.currentSlide.pattT;}
   if(!$scope.currentSlide.audioFile){$scope.slideObj.audioFile = '';}
 
   $scope.slideObj.audioPlay = player.play;
@@ -104,7 +104,7 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     }else if($scope.currentSlide.prodT){
       $scope.slideObj.gradeFunc = $scope.gradeProd;
       $scope.slideObj.submitButton = true;
-    }else if($scope.currentSlide.pattT){
+    }else if($scope.currentSlide.pattT.prompt){
       $scope.slideObj.gradeFunc = $scope.gradePatt;
       $scope.slideObj.submitButton = true;
     }

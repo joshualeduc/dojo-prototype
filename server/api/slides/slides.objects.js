@@ -17,11 +17,11 @@ module.exports = {
   },
   patt: {
     prompt: String,
-    list0: [{title: String, drag: Boolean}, {title: String, drag: Boolean}, {title: String, drag: Boolean}],
-    list1: [{title: String, drag: Boolean}, {title: String, drag: Boolean}, {title: String, drag: Boolean}],
-    list2: [{title: String, drag: Boolean}, {title: String, drag: Boolean}, {title: String, drag: Boolean}],
-    list3: [{title: String, drag: Boolean}, {title: String, drag: Boolean}, {title: String, drag: Boolean}],
-    answerKey: [{title: String}, {title: String}, {title: String}, {title: String}]
+    list0: [{title: String, drag: Boolean}],
+    list1: [{title: String, drag: Boolean}],
+    list2: [{title: String, drag: Boolean}],
+    list3: [{title: String, drag: Boolean}],
+    answerKey: [{title: String}]
   },
   prod: {
     phrase: String,

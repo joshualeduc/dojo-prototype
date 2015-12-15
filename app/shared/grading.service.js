@@ -27,7 +27,9 @@ dojo.service('gradingService', function() {
       this.responseText = responseArray[Math.floor(Math.random() * responseArray.length)];
       angular.element($(".section1").addClass("hidden"));
       angular.element($(".response-answer").removeClass("hidden"));
+      console.log('change mascot');
       angular.element($("#mascot").attr("src", 'assets/images/mascotBigSmile2.png'));
+
     }else {
       this.responseText = 'Try Again';
       angular.element($(".section1").addClass("hidden"));
