@@ -8,15 +8,15 @@
   <div class="infoArea lessonView col-xs-7">
     <div class="text-center">
       <div class="section1 invisible">
-        <p class="prodText">How do you say: <br> "{{phrase}}" in Danish?</p>
+        <p class="prodText">How do you say: <br> "{{data.phrase}}" in Danish?</p>
       </div>
       <div class="response-answer hidden">
-        {{responseText}}
+        {{data.responseText}}
       </div>
       <div class="section2 inputSection invisible">
-        <form ng-submit="grade();">
+        <form ng-submit="data.gradeFunc();">
           <img id="speechToggle" ng-click="toggleSpeechInput()" class="pull-left recordButton" src="assets/images/recordButton.png" alt="">
-          <input id="speechInput" class="prodResponse" type="text" ng-model="toGrade" placeholder="Type or say your answer">
+          <input id="speechInput" class="prodResponse" type="text" ng-model="data.toGrade" placeholder="Type or say your answer">
         </form>
       </div>
     </div>

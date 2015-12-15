@@ -9,7 +9,7 @@ dojo.factory('speechRec', function(){
   recognition.interimResults = true;
   reset = function(){
     recognizing = false;
-    speechToggle.src = "/images/recordButton.png";
+    speechToggle.src = "assets/images/recordButton.png";
   };
   recognition.onend = reset;
 
@@ -43,7 +43,7 @@ dojo.factory('speechRec', function(){
       recognition.lang = "da-DK";
       recognition.start();
       recognizing = true;
-      speechToggle.src = "/images/stopButton.png";
+      speechToggle.src = "assets/images/stopButton.png";
       speechInput.value = "";
       speechInput.placeholder = "";
     }

@@ -10,13 +10,13 @@ dojo.service('gradingService', function() {
       this.responseText = responseArray[Math.floor(Math.random() * responseArray.length)];
       angular.element($(".response-selection").addClass("hidden"));
       angular.element($(".response-answer").removeClass("hidden"));
-      angular.element($("#mascot").attr("src", '/images/mascotBigSmile2.png'));
+      angular.element($("#mascot").attr("src", 'assets/images/mascotBigSmile2.png'));
       angular.element($(".section2").addClass("invisible"));
     }else {
       this.responseText = 'Close, but the correct answer is '+ answer;
       angular.element($(".response-selection").addClass("hidden"));
       angular.element($(".response-answer").removeClass("hidden"));
-      angular.element($("#mascot").attr("src", '/images/mascotChallengeBeard.png'));
+      angular.element($("#mascot").attr("src", 'assets/images/mascotChallengeBeard.png'));
       angular.element($(".section2").addClass("invisible"));
     }
   }.bind(this);
@@ -27,12 +27,12 @@ dojo.service('gradingService', function() {
       this.responseText = responseArray[Math.floor(Math.random() * responseArray.length)];
       angular.element($(".section1").addClass("hidden"));
       angular.element($(".response-answer").removeClass("hidden"));
-      angular.element($("#mascot").attr("src", '/images/mascotBigSmile2.png'));
+      angular.element($("#mascot").attr("src", 'assets/images/mascotBigSmile2.png'));
     }else {
       this.responseText = 'Try Again';
       angular.element($(".section1").addClass("hidden"));
       angular.element($(".response-answer").removeClass("hidden"));
-      angular.element($("#mascot").attr("src", '/images/mascotChallengeBeard.png'));
+      angular.element($("#mascot").attr("src", 'assets/images/mascotChallengeBeard.png'));
     }
   }.bind(this);
   this.gradePatt = function(inputArray, answerArray) {

@@ -13,7 +13,7 @@ dojo.directive("teachingPage", function() {
         setTimeout(function() {$(".quoteLine").removeClass("invisible");}, 700);
         setTimeout(function() {$(".section1").removeClass("invisible");}, 700);
         setTimeout(function() {$(".section2").removeClass("invisible");}, 1400);
-        setTimeout(function() {scope.audioPlay({ file: scope.audioFile });}, 2100);
+        setTimeout(function() {scope.data.audioPlay(scope.data.audioFile);}, 2100);
     }
   };
 });

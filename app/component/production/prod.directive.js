@@ -12,16 +12,7 @@ dojo.directive("productionAssessment", function() {
       $scope.toggleSpeechInput = function() {
         speechRec.toggleStartStop();
       };
-      $scope.answerKey = $scope.answerText;
-      $scope.inputText = '';
-      $scope.formatAnswer = function() {
-        $scope.toGrade = [$scope.inputText, $scope.answerText];
-        if($scope.inputText.toLowerCase() == $scope.answerText.toLowerCase()) {
-          $scope.responseGraded = 'Fantastic';
-        }else {
-          $scope.responseGraded = 'Try Again';
-        }
-      };
+      $scope.data.toGrade = '';
     },
     link: function(scope, elements, attrs) {
 //            AutoPlay

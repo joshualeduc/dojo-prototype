@@ -11,11 +11,11 @@ dojo.directive("comprehensionAssessment", function() {
     controller: function($scope) {
       $scope.select = function(selectionText) {
         $scope.responseChosen = selectionText;
-        $scope.toGrade = selectionText;
-        $scope.answerKey = $scope.answerText;
+        $scope.data.toGrade = selectionText;
+        $scope.answerKey = $scope.data.answerKey;
         angular.element($(".section1").addClass("hidden"));
         angular.element($(".response-selection").removeClass("hidden"));
-        angular.element($("#mascot").attr("src", '/images/mascotChallengeBeard.png'));
+        angular.element($("#mascot").attr("src", 'assets/images/mascotChallengeBeard.png'));
       };
     },
     link: function(scope, elements, attrs) {

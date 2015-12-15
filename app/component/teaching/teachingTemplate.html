@@ -8,10 +8,10 @@
   <div class="infoArea lessonView col-xs-7">
     <div class="text-center">
       <div class="section1 invisible">
-        <p>This is how you say '{{phraseEnglish}}'<br> <span class="wordCards"data-toggle="modal" data-target="#myModal">{{phraseDanish}}</span></p>
+        <p>This is how you say '{{data.english}}'<br> <span class="wordCards"data-toggle="modal" data-target="#myModal">{{data.danish}}</span></p>
       </div>
       <div class="section2 invisible">
-        <img src="assets/images/replayButton.png" alt="" ng-click="audioPlay({ file: audioFile })">
+        <img src="assets/images/replayButton.png" alt="" ng-click="data.audioPlay(data.audioFile)">
       </div>
     </div>
   </div>

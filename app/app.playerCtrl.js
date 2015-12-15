@@ -3,8 +3,16 @@ var dojo = angular.module('dojo');
 dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location, $http, lessonArray, player, userInput, speechRec, gradingService) {
 // Get Lesson Data
   $scope.currentSlide = lessonArray[$routeParams.slideCount - 1];
-  $scope.audioPlay = player.play;
   $scope.lessonLength = lessonArray.length;
+  if($scope.currentSlide.compT){$scope.slideObj = $scope.currentSlide.compT;}
+  if($scope.currentSlide.convoT){$scope.slideObj = $scope.currentSlide.convoT;}
+  if($scope.currentSlide.prodT){$scope.slideObj = $scope.currentSlide.prodT;}
+  if($scope.currentSlide.imgT){$scope.slideObj = $scope.currentSlide.imgT;}
+  if($scope.currentSlide.statT){$scope.slideObj = $scope.currentSlide.statT;}
+  if($scope.currentSlide.teachT){$scope.slideObj = $scope.currentSlide.teachT;}
+  if($scope.currentSlide.uniqueT){$scope.slideObj = $scope.currentSlide.uniqueT;}
+
+  $scope.slideObj.audioPlay = player.play;
 
 // User Data
   $scope.userName = userInput.userName;
@@ -39,22 +47,21 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
   };
 
 //    Grading
-  $scope.toGrade = '';
-  $scope.answerKey = '';
-  $scope.responseText = '';
+  $scope.slideObj.toGrade = '';
+  $scope.slideObj.responseText = '';
   $scope.gradeProd = function() {
-    gradingService.gradeProd($scope.toGrade, $scope.answerKey);
-    $scope.responseText = gradingService.responseText;
+    gradingService.gradeProd($scope.slideObj.toGrade, $scope.slideObj.answerKey);
+    $scope.slideObj.responseText = gradingService.responseText;
     $scope.submitToNext();
   };
   $scope.gradePatt = function() {
     gradingService.gradePatt($scope.toGrade, $scope.answerKey);
-    $scope.responseText = gradingService.responseText;
+    $scope.slideObj.responseText = gradingService.responseText;
     $scope.submitToNext();
   };
   $scope.gradeComp = function() {
-    gradingService.gradeComp($scope.toGrade, $scope.answerKey);
-    $scope.responseText = gradingService.responseText;
+    gradingService.gradeComp($scope.slideObj.toGrade, $scope.slideObj.answerKey);
+    $scope.slideObj.responseText = gradingService.responseText;
     $scope.submitToNext();
   };
   $scope.gradeName = function() {
@@ -62,6 +69,27 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     gradingService.gradeName($scope.userName);
     $scope.submitToNext();
   };
+  $scope.slideObj.gradeFunc = '';
+  $scope.slideObj.submitButton = false;
+  $scope.slideSettings = function (){
+    if($scope.currentSlide.compT){
+      $scope.slideObj.gradeFunc = $scope.gradeComp;
+      $scope.slideObj.submitButton = true;
+    }else if($scope.currentSlide.prodT){
+      $scope.slideObj.gradeFunc = $scope.gradeProd;
+      $scope.slideObj.submitButton = true;
+    }else if($routeParams.slideCount == 2){
+      $scope.slideObj.gradeFunc = $scope.gradeName;
+      $scope.slideObj.submitButton = true;
+    }else if($routeParams.slideCount == 4 || $routeParams.slideCount == 5){
+      $scope.slideObj.gradeFunc = $scope.gradePatt;
+      $scope.slideObj.submitButton = true;
+    }else if($routeParams.slideCount == 15 || $routeParams.slideCount == 18 || $routeParams.slideCount == 19){
+      $scope.slideObj.gradeFunc = $scope.gradeProd;
+      $scope.slideObj.submitButton = true;
+    }
+  };
+  $scope.slideSettings();
 
   $scope.accountant = function() {
     userInput.job = $scope.audioFiles.revisor;

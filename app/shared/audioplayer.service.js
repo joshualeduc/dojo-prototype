@@ -30,7 +30,3 @@ dojo.factory('player', function(audio, $rootScope) {
   });
   return player;
 });
-
-dojo.factory('audioService', function($http, $routeParams){
-  return $http.get('/lessons/' + $routeParams.mission + '/audioList.json');
-});

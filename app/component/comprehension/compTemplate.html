@@ -12,22 +12,22 @@
         <p>What does this word mean?</p>
       </div>
       <div class="response-selection hidden">
-        <p>You picked "{{data.responseChosen}}", is that your final answer?</p>
+        <p>You picked "{{responseChosen}}", is that your final answer?</p>
       </div>
       <div class="response-answer hidden">
         {{data.responseText}}
       </div>
       <div class="section2 invisible">
         <div class="col-xs-12 text-center">
-         <img class="replayButton" src="assets/images/replayButton.png" ng-click="audioPlay({ file: audioFile })">
+         <img class="replayButton" src="assets/images/replayButton.png" ng-click="data.audioPlay(data.audioFile)">
         </div>
         <ul class="multipleChoice col-xs-6">
-          <li class="btn btn-success btn-lg round" ng-click="select(option1)">{{data.option1}}</li>
-          <li class="btn btn-success btn-lg round" ng-click="select(option2)">{{data.option2}}</li>
+          <li class="btn btn-success btn-lg round" ng-click="select(data.optionOne)">{{data.optionOne}}</li>
+          <li class="btn btn-success btn-lg round" ng-click="select(data.optionTwo)">{{data.optionTwo}}</li>
         </ul>
         <ul class="multipleChoice col-xs-6">
-          <li class="btn btn-success btn-lg round" ng-click="select(option3)">{{data.option3}}</li>
-          <li class="btn btn-success btn-lg round" ng-click="select(option4)">{{data.option4}}</li>
+          <li class="btn btn-success btn-lg round" ng-click="select(data.optionThree)">{{data.optionThree}}</li>
+          <li class="btn btn-success btn-lg round" ng-click="select(data.optionFour)">{{data.optionFour}}</li>
         </ul>
       </div>
     </div>
