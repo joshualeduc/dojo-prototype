@@ -89,16 +89,31 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
       $scope.slideObj.submitButton = true;
       $scope.slideObj.phrase = $scope.slideObj.phrase + ' ' + $scope.slideObj.userName;
       $scope.slideObj.answerKey = $scope.slideObj.answerKey + ' ' + $scope.slideObj.userName;
-    }else if($scope.currentSlide.slidePosition == $scope.currentSlide.slidePosition === 18 || $scope.currentSlide.slidePosition === 19){
+    }else if($scope.currentSlide.slidePosition === 17){
       $scope.slideObj.gradeFunc = $scope.gradeProd;
       $scope.slideObj.submitButton = true;
+      $scope.slideObj.audioFile = $scope.slideObj.job;
+      $scope.slideObj.danish = $scope.slideObj.jobDanish;
+      $scope.slideObj.english = $scope.slideObj.jobEnglish;
+      $scope.slideObj.modalTitle = $scope.slideObj.job;
+      $scope.slideObj.modalBody = $scope.slideObj.jobPronunciation;
+    }else if($scope.currentSlide.slidePosition == $scope.currentSlide.slidePosition === 18){
+      $scope.slideObj.gradeFunc = $scope.gradeProd;
+      $scope.slideObj.submitButton = true;
+      $scope.slideObj.phrase = $scope.slideObj.jobEnglish;
+      $scope.slideObj.answerKey = $scope.slideObj.jobDanish;
+    }else if( $scope.currentSlide.slidePosition === 19){
+      $scope.slideObj.gradeFunc = $scope.gradeProd;
+      $scope.slideObj.submitButton = true;
+      $scope.slideObj.phrase = $scope.slideObj.phrase + ' ' + $scope.slideObj.jobEnglish;
+      $scope.slideObj.answerKey = $scope.slideObj.answerKey + ' ' + $scope.slideObj.jobDanish;
     }
   };
   $scope.slideSettings();
 
   $scope.accountant = function() {
-    userInput.job = $scope.audioFiles.revisor;
-    userInput.iAmJob = $scope.audioFiles.jegErRevisor;
+    userInput.job = $scope.slideObj.audioFiles.revisor;
+    userInput.iAmJob = $scope.slideObj.audioFiles.jegErRevisor;
     userInput.jobDanish = 'revisor';
     userInput.jobEnglish = 'accountant';
     userInput.jobTitle = 'assets/lessons/introduce-yourself/introduction-1/images/revisorWord.png';
@@ -106,8 +121,8 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     $scope.nextSlide();
   };
   $scope.analyst = function() {
-    userInput.job = $scope.audioFiles.analytiker;
-    userInput.iAmJob = $scope.audioFiles.jegErAnalytiker;
+    userInput.job = $scope.slideObj.audioFiles.analytiker;
+    userInput.iAmJob = $scope.slideObj.audioFiles.jegErAnalytiker;
     userInput.jobDanish = 'analytiker';
     userInput.jobEnglish = 'analyst';
     userInput.jobTitle = 'assets/lessons/introduce-yourself/introduction-1/images/analytikerWord.png';
@@ -115,8 +130,8 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     $scope.nextSlide();
   };
   $scope.consultant = function() {
-    userInput.job = $scope.audioFiles.konsulent;
-    userInput.iAmJob = $scope.audioFiles.jegErKonsulent;
+    userInput.job = $scope.slideObj.audioFiles.konsulent;
+    userInput.iAmJob = $scope.slideObj.audioFiles.jegErKonsulent;
     userInput.jobDanish = 'konsulent';
     userInput.jobEnglish = 'consultant';
     userInput.jobTitle = 'assets/lessons/introduce-yourself/introduction-1/images/konsulentWord.png';
@@ -124,8 +139,8 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     $scope.nextSlide();
   };
   $scope.designer = function() {
-    userInput.job = $scope.audioFiles.designer;
-    userInput.iAmJob = $scope.audioFiles.jegErDesigner;
+    userInput.job = $scope.slideObj.audioFiles.designer;
+    userInput.iAmJob = $scope.slideObj.audioFiles.jegErDesigner;
     userInput.jobDanish = 'designer';
     userInput.jobEnglish = 'designer';
     userInput.jobTitle = 'assets/lessons/introduce-yourself/introduction-1/images/designerWord.png';
@@ -133,8 +148,8 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     $scope.nextSlide();
   };
   $scope.engineer = function() {
-    userInput.job = $scope.audioFiles.ingenior;
-    userInput.iAmJob = $scope.audioFiles.jegErIngenior;
+    userInput.job = $scope.slideObj.audioFiles.ingenior;
+    userInput.iAmJob = $scope.slideObj.audioFiles.jegErIngenior;
     userInput.jobDanish = 'ingeniør';
     userInput.jobEnglish = 'engineer';
     userInput.jobTitle = 'assets/lessons/introduce-yourself/introduction-1/images/ingeniorWord.png';
@@ -142,8 +157,8 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     $scope.nextSlide();
   };
   $scope.manager = function() {
-    userInput.job = $scope.audioFiles.direktor;
-    userInput.iAmJob = $scope.audioFiles.jegErDirektor;
+    userInput.job = $scope.slideObj.audioFiles.direktor;
+    userInput.iAmJob = $scope.slideObj.audioFiles.jegErDirektor;
     userInput.jobDanish = 'direktør';
     userInput.jobEnglish = 'manager';
     userInput.jobTitle = 'assets/lessons/introduce-yourself/introduction-1/direktorWord.png';
