@@ -15,13 +15,13 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
   $scope.slideObj.audioPlay = player.play;
 
 // User Data
-  $scope.userName = userInput.userName;
-  $scope.job = userInput.job;
-  $scope.iAmJob = userInput.iAmJob;
-  $scope.jobEnglish = userInput.jobEnglish;
-  $scope.jobDanish = userInput.jobDanish;
-  $scope.jobTitle = userInput.jobTitle;
-  $scope.jobPronunciation = userInput.jobPronunciation;
+  $scope.slideObj.userName = userInput.userName;
+  $scope.slideObj.job = userInput.job;
+  $scope.slideObj.iAmJob = userInput.iAmJob;
+  $scope.slideObj.jobEnglish = userInput.jobEnglish;
+  $scope.slideObj.jobDanish = userInput.jobDanish;
+  $scope.slideObj.jobTitle = userInput.jobTitle;
+  $scope.slideObj.jobPronunciation = userInput.jobPronunciation;
 //    Autoplay Unique Slides
   setTimeout(function() {$(".quoteLine-auto").removeClass("invisible");}, 700);
   setTimeout(function() {$(".section1-auto").removeClass("invisible");}, 700);
@@ -65,8 +65,8 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     $scope.submitToNext();
   };
   $scope.gradeName = function() {
-    userInput.userName = $scope.userName;
-    gradingService.gradeName($scope.userName);
+    userInput.userName = $scope.slideObj.userName;
+    gradingService.gradeName($scope.slideObj.userName);
     $scope.submitToNext();
   };
   $scope.slideObj.gradeFunc = '';
@@ -78,13 +78,18 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
     }else if($scope.currentSlide.prodT){
       $scope.slideObj.gradeFunc = $scope.gradeProd;
       $scope.slideObj.submitButton = true;
-    }else if($routeParams.slideCount == 2){
+    }else if($scope.currentSlide.slidePosition === 2){
       $scope.slideObj.gradeFunc = $scope.gradeName;
       $scope.slideObj.submitButton = true;
-    }else if($routeParams.slideCount == 4 || $routeParams.slideCount == 5){
+    }else if($scope.currentSlide.slidePosition === 4 || $scope.currentSlide.slidePosition === 5){
       $scope.slideObj.gradeFunc = $scope.gradePatt;
       $scope.slideObj.submitButton = true;
-    }else if($routeParams.slideCount == 15 || $routeParams.slideCount == 18 || $routeParams.slideCount == 19){
+    }else if($scope.currentSlide.slidePosition === 15){
+      $scope.slideObj.gradeFunc = $scope.gradeProd;
+      $scope.slideObj.submitButton = true;
+      $scope.slideObj.phrase = $scope.slideObj.phrase + ' ' + $scope.slideObj.userName;
+      $scope.slideObj.answerKey = $scope.slideObj.answerKey + ' ' + $scope.slideObj.userName;
+    }else if($scope.currentSlide.slidePosition == $scope.currentSlide.slidePosition === 18 || $scope.currentSlide.slidePosition === 19){
       $scope.slideObj.gradeFunc = $scope.gradeProd;
       $scope.slideObj.submitButton = true;
     }

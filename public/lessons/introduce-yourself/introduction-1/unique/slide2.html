@@ -12,14 +12,14 @@
       </div>
       <div class="section3 hidden">
         <p>Nice to meet you,
-          {{userName}}!</p>
+          {{slideObj.userName}}!</p>
       </div>
       <div class="section4 hidden">
         <p>Let's learn how to make a sentence in Danish.</p>
       </div>
       <div class="section2-auto section2 inputSection invisible" ng-submit>
-        <form ng-submit="gradeName()">
-          <input ng-model="userName" size="15" type="text">
+        <form ng-submit="slideObj.gradeFunc()">
+          <input ng-model="slideObj.userName" size="15" type="text">
         </form>
       </div>
     </div>
