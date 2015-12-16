@@ -210,7 +210,7 @@ div.selected-answer {
 /*Comprehension Template*/
 
 .response-answer, .response-selection {
-  height: 110px;
+  height: 135px;
 }
 .multipleChoice li {
   display: block;
