@@ -12,7 +12,6 @@ dojo.directive("productionAssessment", function() {
       $scope.toggleSpeechInput = function() {
         speechRec.toggleStartStop();
       };
-      $scope.data.toGrade = '';
     },
     link: function(scope, elements, attrs) {
 //            AutoPlay
