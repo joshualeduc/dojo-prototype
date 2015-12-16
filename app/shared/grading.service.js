@@ -27,7 +27,6 @@ dojo.service('gradingService', function() {
       this.responseText = responseArray[Math.floor(Math.random() * responseArray.length)];
       angular.element($(".section1").addClass("hidden"));
       angular.element($(".response-answer").removeClass("hidden"));
-      console.log('change mascot');
       angular.element($("#mascotProd").attr("src", 'assets/images/mascotBigSmile2.png'));
       angular.element($("#mascotConvo").attr("src", 'assets/images/mascotBigSmile2.png'));
 
@@ -41,7 +40,18 @@ dojo.service('gradingService', function() {
   }.bind(this);
   this.gradePatt = function(inputArray, answerArray) {
     this.responseText = '';
-    if(inputArray[0].title == answerArray[0].title && inputArray[1].title == answerArray[1].title) {
+    var arraysEqual = function (arr1, arr2) {
+      if(arr1.length !== arr2.length){
+        return false;
+      }
+      for(var i = arr1.length; i--;) {
+        if(arr1[i].title !== arr2[i].title)
+          return false;
+      }
+      return true;
+    };
+    var isCorrect = arraysEqual(inputArray, answerArray);
+    if(isCorrect) {
       responseArray = ['Fantastisk!', 'Det er perfekt!', 'Du er smart!'];
       this.responseText = responseArray[Math.floor(Math.random() * responseArray.length)];
       angular.element($(".section1").addClass("hidden"));

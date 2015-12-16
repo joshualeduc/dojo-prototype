@@ -9,7 +9,7 @@ dojo.factory('speechRec', function(){
   recognition.interimResults = true;
   reset = function(){
     recognizing = false;
-    // speechToggleConvo.src = "assets/images/recordButton.png";
+    speechToggleConvo.src = "assets/images/recordButton.png";
     speechToggleProd.src = "assets/images/recordButton.png";
   };
   recognition.onend = reset;
@@ -25,19 +25,19 @@ dojo.factory('speechRec', function(){
       }
     }
     if(final === 'yy'){
-      // speechInputConvo.value = 'jeg';
+      speechInputConvo.value = 'jeg';
       speechInputProd.value = 'jeg';
     }else if(final === 'r'){
-      // speechInputConvo.value = 'er';
+      speechInputConvo.value = 'er';
       speechInputProd.value = 'er';
     }else if(final === 'youtube'){
-      // speechInputConvo.value = 'du';
+      speechInputConvo.value = 'du';
       speechInputProd.value = 'du';
     }else{
-      // speechInputConvo.value = final;
+      speechInputConvo.value = final;
       speechInputProd.value = final;
     }
-    // speechInputConvo.placeholder = interim;
+    speechInputConvo.placeholder = interim;
     speechInputProd.placeholder = interim;
   };
 
