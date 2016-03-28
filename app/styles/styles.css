@@ -287,3 +287,30 @@ div.selected-answer {
   background: #fa5727;
   border-color: #fa5727;
 }
+
+/*loading page*/
+.loading {
+  margin: 25px;
+  font-size: 50px;
+}
+.glyphicon-refresh-animate {
+    -animation: spin 2s infinite linear;
+    -ms-animation: spin 2s infinite linear;
+    -webkit-animation: spinw 2s infinite linear;
+    -moz-animation: spinm 2s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+@-webkit-keyframes spinw {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes spinm {
+    from { -moz-transform: rotate(0deg);}
+    to { -moz-transform: rotate(360deg);}
+}

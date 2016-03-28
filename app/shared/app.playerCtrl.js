@@ -1,9 +1,9 @@
 var dojo = angular.module('dojo');
 
-dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location, $http, lessonArray, player, userInput, speechRec, gradingService) {
+dojo.controller('playerCtrl', function($scope, $timeout, $stateParams, $state, $http, player, userInput, speechRec, gradingService) {
 // Get Lesson Data
-  $scope.currentSlide = lessonArray[$routeParams.slideCount - 1];
-  $scope.lessonLength = lessonArray.length;
+  $scope.currentSlide = $scope.lessonArray[$stateParams.slideCount - 1];
+  $scope.lessonLength = $scope.lessonArray.length;
   if($scope.currentSlide.compT){$scope.slideObj = $scope.currentSlide.compT;}
   if($scope.currentSlide.convoT){$scope.slideObj = $scope.currentSlide.convoT;}
   if($scope.currentSlide.prodT){$scope.slideObj = $scope.currentSlide.prodT;}
@@ -25,23 +25,19 @@ dojo.controller('playerCtrl', function($scope, $timeout, $routeParams, $location
   $scope.slideObj.jobTitle = userInput.jobTitle;
   $scope.slideObj.jobPronunciation = userInput.jobPronunciation;
 //    Autoplay Unique Slides
-  setTimeout(function() {$(".quoteLine-auto").removeClass("invisible");}, 700);
-  setTimeout(function() {$(".section1-auto").removeClass("invisible");}, 700);
-  setTimeout(function() {$(".section2-auto").removeClass("invisible");}, 1400);
+  $timeout(function() {$(".quoteLine-auto").removeClass("invisible");}, 700);
+  $timeout(function() {$(".section1-auto").removeClass("invisible");}, 700);
+  $timeout(function() {$(".section2-auto").removeClass("invisible");}, 1400);
 
 //    Navigation
-  $scope.slideNum = $routeParams.slideCount;
+  $scope.slideNum = $stateParams.slideCount;
   $scope.prevSlide = function() {
-    // $scope.slideNum = $routeParams.slideCount;
     $scope.slideNum--;
-    $scope.newUrl = $routeParams.mission + '/' + $routeParams.lesson + '/slide/' + $scope.slideNum;
-    $location.path($scope.newUrl);
+    $state.go('player.play', {mission: $stateParams.mission, lesson: $stateParams.lesson, slideCount: $scope.slideNum})
   };
   $scope.nextSlide = function() {
-    // $scope.slideNum = $routeParams.slideCount;
     $scope.slideNum++;
-    $scope.newUrl = $routeParams.mission + '/' + $routeParams.lesson + '/slide/' + $scope.slideNum;
-    $location.path($scope.newUrl);
+    $state.go('player.play', {mission: $stateParams.mission, lesson: $stateParams.lesson, slideCount: $scope.slideNum})
   };
   $scope.submitToNext = function() {
     angular.element($("#submit").addClass("hidden"));

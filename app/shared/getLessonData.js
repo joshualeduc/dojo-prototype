@@ -1,6 +1,6 @@
 var dojo = angular.module('dojo');
 
-dojo.service('getLesson', function($http, $q, $routeParams){
+dojo.service('getLesson', function($http, $q){
   this.getLessonData = function(){
     var deferred = $q.defer();
     $http.get('/api/lessons/IntroduceYourself').then(function(data){
