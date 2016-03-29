@@ -1,4 +1,4 @@
-var mongodb = require('./dbInfo.js');
+var mongodb = herokuMongo;
 module.exports = {
   db: mongodb,
   sessionSecret: 'productionSecret'
