@@ -8,11 +8,11 @@ dojo.config(function ($stateProvider, $urlRouterProvider) {
     url: '/viewer',
     templateUrl: 'assets/template/playerTemplate.html',
     controller: 'loadCtrl',
-    // resolve: {
-    //   lessonArray: function(getLesson){
-    //     return getLesson.getLessonData();
-    //   }
-    // }
+    resolve: {
+      lessonArray: function(getLesson){
+        return getLesson.getLessonData();
+      }
+    }
   })
 
   .state('player.load', {

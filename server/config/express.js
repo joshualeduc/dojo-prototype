@@ -17,7 +17,7 @@ module.exports = function (){
   app.use(cors());
   require('../api/slides/slides.routes')(app);
   require('../api/lesson/lesson.routes')(app);
-  app.use('/assets', express.static('./public'));
+  app.use('/assets', express.static(__dirname + '/public'));
   app.use('/vendor', express.static('./node_modules'));
   app.use('/bower', express.static('./bower_components'))
 
