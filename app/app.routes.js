@@ -6,7 +6,7 @@ dojo.config(function ($stateProvider, $urlRouterProvider) {
 
   .state('player', {
     url: '/viewer',
-    templateUrl: 'assets/template/playerTemplate.html',
+    templateUrl: 'app/template/playerTemplate.html',
     controller: 'loadCtrl',
     resolve: {
       lessonArray: function(getLesson){
@@ -16,18 +16,18 @@ dojo.config(function ($stateProvider, $urlRouterProvider) {
   })
 
   .state('player.load', {
-    templateUrl: 'assets/template/loadTemplate.html '
+    templateUrl: 'app/template/loadTemplate.html '
   })
 
   .state('player.play', {
     url: '/:mission/:lesson/slide/:slideCount',
-    templateUrl: 'assets/template/lessonTemplate.html',
+    templateUrl: 'app/template/lessonTemplate.html',
     controller: 'playerCtrl'
   })
 
   .state('home', {
     url: '/',
-    templateUrl:'assets/template/homeTemplate.html',
+    templateUrl:'app/template/homeTemplate.html',
     controller: 'mainCtrl'
   });
 });

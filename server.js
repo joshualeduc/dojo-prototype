@@ -7,6 +7,4 @@ var mongoose = require('mongoose');
 var app = require('./server/config/express')(),
     db = require('./server/config/mongoose')();
 
-app.listen(port, function(){
-  console.log('listening on ' + port);
-});
+app.listen(port);

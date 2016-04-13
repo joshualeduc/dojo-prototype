@@ -1,4 +1,4 @@
-var config = require('./config'),
+ var config = require('./config'),
 
  express = require('express'),
  bodyParser = require('body-parser'),
@@ -17,7 +17,8 @@ module.exports = function (){
   app.use(cors());
   require('../api/slides/slides.routes')(app);
   require('../api/lesson/lesson.routes')(app);
-  app.use('/assets', express.static('./public'));
+  app.use('/app', express.static('./public'));
+  app.use('/assets', express.static('./assets'));
   app.use('/vendor', express.static('./node_modules'));
 
   //Going into my app folder until I learn gulp better
